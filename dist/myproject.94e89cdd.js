@@ -140,12 +140,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"5ufoi":[function(require,module,exports) {
+})({"l0jQk":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
-var HMR_ENV_HASH = "4e5dac8afe405db7";
-module.bundle.HMR_BUNDLE_ID = "536d796f989e8c84";
+var HMR_ENV_HASH = "69f74e7f31319ffd";
+module.bundle.HMR_BUNDLE_ID = "ad4184af94e89cdd";
 "use strict";
 function _createForOfIteratorHelper(o, allowArrayLike) {
     var it;
@@ -454,29 +454,8 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}]},["5ufoi"], null, "parcelRequire222e")
-$(function() {
-    $(".js-account-item").each(function() {
-        var $this = $(this);
-        var $thisData = $this.data();
-        if ($thisData.follow) $this.find(".js-follow-btn").addClass("isFollow");
-    });
-    $(".js-follow-btn").on("click", function() {
-        var $this = $(this);
-        var $accountItem = $this.parents(".js-account-item");
-        var $thisData = $accountItem.data();
-        if ($thisData.follow) {
-            // ajax
-            $this.removeClass("isFollow");
-            $this.text("フォローする");
-            $accountItem.data("follow", false);
-        } else {
-            // ajax
-            $this.addClass("isFollow");
-            $this.text("フォロー中");
-            $accountItem.data("follow", true);
-        }
-    });
-});
+},{}],"662OV":[function(require,module,exports) {
 
-//# sourceMappingURL=index.989e8c84.js.map
+},{}]},["l0jQk","662OV"], "662OV", "parcelRequire222e")
+
+//# sourceMappingURL=myproject.94e89cdd.js.map

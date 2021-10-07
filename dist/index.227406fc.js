@@ -140,12 +140,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"5ufoi":[function(require,module,exports) {
+})({"hkXzs":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
-var HMR_ENV_HASH = "4e5dac8afe405db7";
-module.bundle.HMR_BUNDLE_ID = "536d796f989e8c84";
+var HMR_ENV_HASH = "69f74e7f31319ffd";
+module.bundle.HMR_BUNDLE_ID = "b3bb0a59227406fc";
 "use strict";
 function _createForOfIteratorHelper(o, allowArrayLike) {
     var it;
@@ -454,29 +454,210 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}]},["5ufoi"], null, "parcelRequire222e")
-$(function() {
-    $(".js-account-item").each(function() {
-        var $this = $(this);
-        var $thisData = $this.data();
-        if ($thisData.follow) $this.find(".js-follow-btn").addClass("isFollow");
+},{}],"23obh":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _createElement = require("./vdom/createElement");
+var _createElementDefault = parcelHelpers.interopDefault(_createElement);
+var _app = require("./vdom/app");
+const INITIAL_STATE = {
+    accounts: [
+        {
+            id: 1,
+            name: "リオネル・メッシ",
+            team: "FCバルセロナ",
+            description: "アルゼンチンサンタフェ州ロサリオ出身のイタリア系アルゼンチン人サッカー選手。リーガ・エスパニョーラ・FCバルセロナ所属。アルゼンチン代表。ポジションはフォワード (wikipedia)",
+            isFollow: false
+        },
+        {
+            id: 2,
+            name: "クリスティアーノ・ロナウド",
+            team: "Juventus",
+            description: "ポルトガル・フンシャル出身のサッカー選手。セリエA・ユヴェントスFC所属。ポルトガル代表。ポジションはフォワード (wikipedia)",
+            isFollow: true
+        },
+        {
+            id: 3,
+            name: "ネイマール",
+            team: "パリサンジェルマン",
+            description: "ブラジル・サンパウロ州モジ・ダス・クルーゼス出身のサッカー選手。ブラジル代表。リーグ・アン・パリ・サンジェルマンFC所属。ポジションはフォワード (wikipedia)",
+            isFollow: false
+        }, 
+    ]
+};
+const accountItem = (account)=>{
+    return _createElementDefault.default("div", {
+        attrs: {
+        },
+        children: [
+            _createElementDefault.default("div", {
+                attrs: {
+                    class: "account__summary"
+                },
+                children: [
+                    _createElementDefault.default("div", {
+                        attrs: {
+                        },
+                        children: [
+                            _createElementDefault.default("p", {
+                                attrs: {
+                                    class: "account__name"
+                                },
+                                children: [
+                                    account.name
+                                ]
+                            }),
+                            _createElementDefault.default("p", {
+                                attrs: {
+                                    class: "account__team"
+                                },
+                                children: [
+                                    account.team
+                                ]
+                            }), 
+                        ]
+                    }),
+                    _createElementDefault.default("div", {
+                        attrs: {
+                        },
+                        children: [
+                            _createElementDefault.default("button", {
+                                attrs: {
+                                    type: "button",
+                                    class: `followBtn ${account.isFollow ? "isFollow" : ""}`,
+                                    onclick: ()=>alert(account.name)
+                                },
+                                children: [
+                                    account.isFollow ? "フォロー中" : "フォローする"
+                                ]
+                            }), 
+                        ]
+                    }), 
+                ]
+            }),
+            _createElementDefault.default("p", {
+                attrs: {
+                    class: "account__description"
+                },
+                children: [
+                    account.description
+                ]
+            }), 
+        ]
     });
-    $(".js-follow-btn").on("click", function() {
-        var $this = $(this);
-        var $accountItem = $this.parents(".js-account-item");
-        var $thisData = $accountItem.data();
-        if ($thisData.follow) {
-            // ajax
-            $this.removeClass("isFollow");
-            $this.text("フォローする");
-            $accountItem.data("follow", false);
-        } else {
-            // ajax
-            $this.addClass("isFollow");
-            $this.text("フォロー中");
-            $accountItem.data("follow", true);
-        }
-    });
+};
+const view = (props)=>_createElementDefault.default("ul", {
+        attrs: {
+            class: "accountList"
+        },
+        children: props.accounts.map((e)=>{
+            return _createElementDefault.default("li", {
+                attrs: {
+                    class: "accountList__item"
+                },
+                children: [
+                    accountItem(e)
+                ]
+            });
+        })
+    })
+;
+_app.app({
+    root: "#app",
+    initialState: INITIAL_STATE,
+    view
 });
 
-//# sourceMappingURL=index.989e8c84.js.map
+},{"./vdom/createElement":"ie5h1","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","./vdom/app":"6kWSS"}],"ie5h1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = (tagName, { attrs ={
+} , children =[]  })=>{
+    const vElement = Object.create(null);
+    Object.assign(vElement, {
+        tagName,
+        attrs,
+        children
+    });
+    return vElement;
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"JacNc":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule') return;
+        // Skip duplicate re-exports when they have the same value.
+        if (key in dest && dest[key] === source[key]) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"6kWSS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "app", ()=>app
+);
+var _render = require("./render");
+const app = ({ root , initialState , view  })=>{
+    const $el = document.querySelector(root);
+    let newNode = view(initialState);
+    const renderDOM = function() {
+        $el.appendChild(_render.render(newNode));
+    };
+    renderDOM();
+};
+
+},{"./render":"fckHW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"fckHW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "render", ()=>render
+);
+var _utils = require("./utils");
+const setAttrs = (target, attrs)=>{
+    for(const attr in attrs)if (_utils.isEventAttr(attr)) target.addEventListener(attr.slice(2), attrs[attr]);
+    else target.setAttribute(attr, attrs[attr]);
+};
+function renderElement({ tagName , attrs , children  }) {
+    const $el = document.createElement(tagName);
+    setAttrs($el, attrs);
+    for (const child of children)$el.appendChild(render(child));
+    return $el;
+}
+function render(vNode) {
+    if (typeof vNode === "string") return document.createTextNode(vNode);
+    return renderElement(vNode);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","./utils":"fveky"}],"fveky":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isEventAttr", ()=>isEventAttr
+);
+const isEventAttr = (attr)=>{
+    return /^on/.test(attr);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}]},["hkXzs","23obh"], "23obh", "parcelRequire222e")
+
+//# sourceMappingURL=index.227406fc.js.map
